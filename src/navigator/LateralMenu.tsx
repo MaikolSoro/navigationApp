@@ -7,7 +7,7 @@ import { useWindowDimensions } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
-export const MenuLateral = () => {
+export const MenuLateralBasic = () => {
 
     const { width } = useWindowDimensions();
 
