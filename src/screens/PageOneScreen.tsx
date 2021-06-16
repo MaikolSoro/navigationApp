@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, Button, TouchableOpacity } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import { styles } from '../theme/appTheme';
 
-interface Props extends StackScreenProps<any, any> {};
+// interface Props extends StackScreenProps<any, any> {};
+
+interface Props extends DrawerScreenProps<any, any> {};
 
 
 export const PageOneScreen = ({ navigation }: Props) => {
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerLeft: () => (
+                <Button 
+                    title="Menu"
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            )
+        });
+        
+    }, []);
     return (
         <View style={styles.globalMargin}>
             <Text style={styles.title}>Pagina1 screen</Text>
@@ -35,7 +49,6 @@ export const PageOneScreen = ({ navigation }: Props) => {
                 <TouchableOpacity
                      style={{
                         ...styles.buttonBig,
-                        backgroundColor: '#FF9427'
                     }}
                     onPress={() => navigation.navigate('PersonScreen', {
                         id: 2,
