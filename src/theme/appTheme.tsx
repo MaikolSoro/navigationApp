@@ -6,6 +6,21 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        marginBottom: 5
+        marginBottom: 10
+    },
+    buttonBig: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'red',
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 10
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold'
     }
+
 });
