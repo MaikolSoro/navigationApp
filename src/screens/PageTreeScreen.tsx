@@ -8,7 +8,7 @@ interface Props extends StackScreenProps<any, any>{};
 export const PageTreeScreen = ({ navigation}: Props) => {
     return (
         <View style={styles.globalMargin}>
-            <Text>Pagina3 screen</Text>
+            <Text style={styles.title}>Pagina3 screen</Text>
 
             <Button
                 title="Regresar"

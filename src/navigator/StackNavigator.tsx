@@ -9,10 +9,20 @@ const Stack = createStackNavigator();
 
 export const StackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="PageOneScreen" component={PageOneScreen} />
-      <Stack.Screen name="PageTwoScreen" component={PageTwoScreen} />
-      <Stack.Screen name="PageTreeScreen" component={PageTreeScreen} />
+    <Stack.Navigator
+      screenOptions={{
+       headerStyle: {
+         elevation: 0,
+         shadowColor: 'transparent'
+       },
+        cardStyle:{
+          backgroundColor:  'white'
+        }
+      }}
+    >
+      <Stack.Screen name="PageOneScreen"  options={{ title: "Pagina 1"}} component={PageOneScreen} />
+      <Stack.Screen name="PageTwoScreen"  options={{ title: "Pagina 2"}} component={PageTwoScreen} />
+      <Stack.Screen name="PageTreeScreen" options={{ title: "Pagina 3"}} component={PageTreeScreen} />
     </Stack.Navigator>
   );
 }
