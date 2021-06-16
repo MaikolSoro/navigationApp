@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer';
 import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
-import { useWindowDimensions, View, Image } from 'react-native';
+import { useWindowDimensions, View, Text, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../theme/appTheme';
 
 const Drawer = createDrawerNavigator();
@@ -21,7 +21,7 @@ export const MenuLateral = () => {
     </Drawer.Navigator>
   );
 }
-const InternalMenu = (props: DrawerContentComponentProps<DrawerContentOptions>) => {
+const InternalMenu = ({navigation}: DrawerContentComponentProps<DrawerContentOptions>) => {
     return (
         <DrawerContentScrollView>
             <View style={styles.avatarContainer}>
@@ -31,7 +31,28 @@ const InternalMenu = (props: DrawerContentComponentProps<DrawerContentOptions>) 
                     }}
                     style={styles.avatar}
                 />
-            </View>
+            </View> 
+            {/* option the menu */}
+            <View style={styles.menuContainer}>
+                    <TouchableOpacity 
+                        style={styles.menuButton}
+                        onPress={()=> navigation.navigate('StackNavigator')}
+                    >
+                        <Text style={styles.menuItem}>
+                            Navigation
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={styles.menuButton}
+                        onPress={()=> navigation.navigate('SettingsScreen')}
+
+                    >
+                        <Text style={styles.menuItem}>
+                            Settings
+                        </Text>
+                    </TouchableOpacity>
+            </View>    
         </DrawerContentScrollView>
     );
 }
