@@ -29,7 +29,7 @@ export const PageOneScreen = ({ navigation }: Props) => {
                         name: 'Maikol'
                     })}
                 >
-                    <Text  style={styles.buttonBig}>Maikol</Text>
+                    <Text  style={styles.buttonText}>Maikol</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -39,10 +39,10 @@ export const PageOneScreen = ({ navigation }: Props) => {
                     }}
                     onPress={() => navigation.navigate('PersonScreen', {
                         id: 2,
-                        name: 'Maikol'
+                        name: 'Carlos'
                     })}
                 >
-                    <Text style={styles.buttonText}>Maikol</Text>
+                    <Text style={styles.buttonText}>Carlos</Text>
                 </TouchableOpacity>
 
             </View>
