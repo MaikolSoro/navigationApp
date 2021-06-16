@@ -30,7 +30,12 @@ export const PageOneScreen = ({ navigation }: Props) => {
                 onPress={() => navigation.navigate('PageTwoScreen') }
             />
 
-           <Text>Navigate with arguments</Text>
+           <Text style={{
+               marginVertical: 20,
+               fontSize: 20,
+           }}>
+               Navigate with arguments
+            </Text>
 
             <View style={{ flexDirection: 'row'}}>
                 <TouchableOpacity

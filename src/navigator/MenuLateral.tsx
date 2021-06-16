@@ -1,11 +1,25 @@
 import * as React from 'react';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
-import { SettingsScreen } from '../screens/SettingsScreen';
 import { useWindowDimensions, View, Text, Image, TouchableOpacity } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SettingsScreen } from '../screens/SettingsScreen';
+import { StackNavigator } from './StackNavigator';
 import { styles } from '../theme/appTheme';
 
 const Drawer = createDrawerNavigator();
+
+const Stack = createStackNavigator();
+
+const SettingsStackScreen = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name= "SettingsScreen"
+                component={SettingsScreen}
+           />
+        </Stack.Navigator>
+    )
+}
 
 export const MenuLateral = () => {
 
@@ -16,8 +30,8 @@ export const MenuLateral = () => {
         drawerType= {width >= 768 ? 'permanent' :'front'}
         drawerContent={(props) => <InternalMenu {...props} />}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen name="StackNavigator" component={ StackNavigator } />
+      <Drawer.Screen name="SettingsScreen" component={ SettingsStackScreen } />
     </Drawer.Navigator>
   );
 }
