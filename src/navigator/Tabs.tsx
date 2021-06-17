@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Platform, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { TabOneScreen } from '../screens/TabOneScreen';
 
@@ -35,17 +36,17 @@ const TabsAndroid = () => {
 
        switch(route.name) {
          case 'TabOneScreen':
-           iconName = 'T1'
+           iconName = 'bandage-outline'
            break;
          case 'TabTwoScreen':
-             iconName = 'T2'
+             iconName = 'basketball-outline'
              break;  
 
          case 'StackNavigator':
-             iconName = 'ST'
+             iconName = 'bookmarks-outline'
            break;      
        }
-        return <Text style={{color}}>{ iconName }</Text>
+        return <Icon name={iconName} size={20} color={ color} />
       }
     })}
     >
@@ -82,17 +83,17 @@ const BottomTabIOS = createBottomTabNavigator();
 
         switch(route.name) {
           case 'TabOneScreen':
-            iconName = 'T1'
+            iconName = 'bandage-outline'
             break;
           case 'TabTwoScreen':
-              iconName = 'T2'
+              iconName = 'basketball-outline'
               break;  
-
+ 
           case 'StackNavigator':
-              iconName = 'ST'
+              iconName = 'bookmarks-outline'
             break;      
         }
-         return <Text style={{color}}>{ iconName }</Text>
+        return <Icon name={iconName} size={20} color={ color} />
        }
      })}
     >
