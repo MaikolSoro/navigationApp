@@ -1,11 +1,15 @@
 import * as React from 'react';
+
 import { Platform, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { TabOneScreen } from '../screens/TabOneScreen';
-import { TabTwoScreen } from '../screens/TabTwoScreen';
+
 import { StackNavigator } from './StackNavigator';
 import { colores } from '../theme/appTheme';
+import { TopTabNavigator } from './TopTabNavigator';
 
 
 export const Tabs = () => {
@@ -32,22 +36,22 @@ const TabsAndroid = () => {
 
        switch(route.name) {
          case 'TabOneScreen':
-           iconName = 'T1'
+           iconName = 'bandage-outline'
            break;
          case 'TabTwoScreen':
-             iconName = 'T2'
+             iconName = 'basketball-outline'
              break;  
 
          case 'StackNavigator':
-             iconName = 'ST'
+             iconName = 'bookmarks-outline'
            break;      
        }
-        return <Text style={{color}}>{ iconName }</Text>
+        return <Icon name={iconName} size={20} color={ color} />
       }
     })}
     >
       <BottomTabAndroid.Screen name="TabOneScreen" options={{ title: 'Tab1'}} component={TabOneScreen} />
-      <BottomTabAndroid.Screen name="TabTwoScreen" options={{ title: 'Tab2'}} component={TabTwoScreen} />
+      <BottomTabAndroid.Screen name="TabTwoScreen" options={{ title: 'Tab2'}} component={TopTabNavigator} />
       <BottomTabAndroid .Screen name="StackNavigator"  options={{ title: 'Stack'}} component={ StackNavigator} />
     </BottomTabAndroid.Navigator>
   );
@@ -79,23 +83,23 @@ const BottomTabIOS = createBottomTabNavigator();
 
         switch(route.name) {
           case 'TabOneScreen':
-            iconName = 'T1'
+            iconName = 'bandage-outline'
             break;
           case 'TabTwoScreen':
-              iconName = 'T2'
+              iconName = 'basketball-outline'
               break;  
-
+ 
           case 'StackNavigator':
-              iconName = 'ST'
+              iconName = 'bookmarks-outline'
             break;      
         }
-         return <Text style={{color}}>{ iconName }</Text>
+        return <Icon name={iconName} size={20} color={ color} />
        }
      })}
     >
       {/* <Tab.Screen name="TabOneScreen" options={{ title: 'Tab1', tabBarIcon: (props) => <Text style={{ color: props.color }}>T1</Text>}} component={TabOneScreen} /> */}
       <BottomTabIOS.Screen name="TabOneScreen" options={{ title: 'Tab1'}} component={TabOneScreen} />
-      <BottomTabIOS.Screen name="TabTwoScreen" options={{ title: 'Tab2'}} component={TabTwoScreen} />
+      <BottomTabIOS.Screen name="TabTwoScreen" options={{ title: 'Tab2'}} component={TopTabNavigator} />
       <BottomTabIOS .Screen name="StackNavigator"  options={{ title: 'Stack'}} component={ StackNavigator} />
     </BottomTabIOS.Navigator>
   );

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { styles } from '../theme/appTheme';
+import { styles, colores } from '../theme/appTheme';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // interface Props extends StackScreenProps<any, any> {};
 
@@ -13,10 +15,14 @@ export const PageOneScreen = ({ navigation }: Props) => {
     useEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                <Button 
-                    title="Menu"
-                    onPress={() => navigation.toggleDrawer()}
-                />
+               <TouchableOpacity
+                style={{
+                    marginLeft: 10
+                }}
+                onPress={() => navigation.toggleDrawer()}
+               >
+                <Icon name="menu-outline" size={35} color={ colores.primary} />
+               </TouchableOpacity>
             )
         });
         
@@ -48,6 +54,7 @@ export const PageOneScreen = ({ navigation }: Props) => {
                         name: 'Maikol'
                     })}
                 >
+                    <Icon name="body-outline" size={35} color="white" />
                     <Text  style={styles.buttonText}>Maikol</Text>
                 </TouchableOpacity>
 
@@ -57,9 +64,10 @@ export const PageOneScreen = ({ navigation }: Props) => {
                     }}
                     onPress={() => navigation.navigate('PersonScreen', {
                         id: 2,
-                        name: 'Carlos'
+                        name: 'Andrea'
                     })}
                 >
+                    <Icon name="woman-outline" size={35} color="white" />
                     <Text style={styles.buttonText}>Carlos</Text>
                 </TouchableOpacity>
 
