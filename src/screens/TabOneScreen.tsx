@@ -23,13 +23,13 @@ export const TabOneScreen = () => {
             <Text style={styles.title}>Iconos</Text>
 
             <Text>
-                <Icon name="airplane-outline" size={80} color={ colores.primary} />
-                <Icon name="attach-outline" size={80} color={ colores.primary} />
-                <Icon name="bonfire-outline" size={80} color={ colores.primary} />
-                <Icon name="calculator-outline" size={80} color={ colores.primary} />
-                <Icon name="chatbubble-ellipses-outline" size={80} color={ colores.primary} />
-                <Icon name="images-outline" size={80} color={ colores.primary} />
-                <Icon name="leaf-outline" size={80} color={ colores.primary} />
+                <Icon iconName="airplane-outline"  />
+                <Icon iconName="attach-outline" />
+                <Icon iconName="bonfire-outline"  />
+                <Icon iconName="calculator-outline"  />
+                <Icon iconName="chatbubble-ellipses-outline"  />
+                <Icon iconName="images-outline"  />
+                <Icon iconName="leaf-outline" />
 
             </Text>
 
