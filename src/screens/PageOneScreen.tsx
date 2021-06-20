@@ -68,7 +68,7 @@ export const PageOneScreen = ({ navigation }: Props) => {
                     })}
                 >
                     <Icon name="woman-outline" size={35} color="white" />
-                    <Text style={styles.buttonText}>Carlos</Text>
+                    <Text style={styles.buttonText}>Andrea</Text>
                 </TouchableOpacity>
 
             </View>

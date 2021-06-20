@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { View, Text } from 'react-native';
 import { styles, colores } from '../theme/appTheme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 
 export const TabOneScreen = () => {
@@ -23,13 +24,13 @@ export const TabOneScreen = () => {
             <Text style={styles.title}>Iconos</Text>
 
             <Text>
-                <Icon iconName="airplane-outline"  />
-                <Icon iconName="attach-outline" />
-                <Icon iconName="bonfire-outline"  />
-                <Icon iconName="calculator-outline"  />
-                <Icon iconName="chatbubble-ellipses-outline"  />
-                <Icon iconName="images-outline"  />
-                <Icon iconName="leaf-outline" />
+                 <TouchableIcon iconName="airplane-outline" />
+                <TouchableIcon iconName="attach-outline" />
+                <TouchableIcon iconName="bonfire-outline" />
+                <TouchableIcon iconName="calculator-outline" />
+                <TouchableIcon iconName="chatbubble-ellipses-outline" />
+                <TouchableIcon iconName="images-outline" />
+                <TouchableIcon iconName="leaf-outline" />
 
             </Text>
 
